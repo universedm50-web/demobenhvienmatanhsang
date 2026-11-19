@@ -12,6 +12,11 @@
   --gold-500: #C8A461;
   --gold-400: #D9BC82;
   --gold-200: #F3E8CE;
+  --brand-orange: #EA6A1B;
+  --brand-orange-dark: #C9520B;
+  --brand-orange-light: #F58634;
+  --brand-blue: #1D4B8F;
+  --brand-cyan: #2FA4DD;
   --ivory-50: #FAF9F6;
   --ivory-100: #F4F1EA;
   --white: #FFFFFF;
@@ -28,6 +33,7 @@
   --shadow-soft: 0 10px 40px -10px rgba(11, 29, 58, 0.08);
   --shadow-luxury: 0 24px 60px -15px rgba(11, 29, 58, 0.16);
   --shadow-gold: 0 10px 30px -8px rgba(200, 164, 97, 0.45);
+  --shadow-brand-cta: 0 10px 28px -6px rgba(234, 106, 27, 0.45);
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 22px;
@@ -84,43 +90,46 @@ body {
   border-radius: 99px;
 }
 
-/* Luxury Buttons */
+/* Luxury Brand CTA Buttons (Logo Orange & Royal Blue) */
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold-500) 0%, var(--gold-600) 100%);
+  background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 50%, var(--brand-orange-light) 100%);
   color: var(--white);
   font-weight: 600;
   letter-spacing: 0.02em;
-  box-shadow: var(--shadow-gold);
+  box-shadow: var(--shadow-brand-cta);
   transition: var(--transition);
 }
 .btn-gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 34px -6px rgba(200, 164, 97, 0.6);
+  box-shadow: 0 14px 34px -6px rgba(234, 106, 27, 0.62);
   filter: brightness(1.06);
 }
 
 .btn-navy {
-  background: var(--navy-900);
+  background: linear-gradient(135deg, var(--brand-blue) 0%, #14376D 100%);
   color: var(--white);
   font-weight: 600;
+  box-shadow: 0 10px 26px -8px rgba(29, 75, 143, 0.45);
   transition: var(--transition);
 }
 .btn-navy:hover {
-  background: var(--navy-800);
+  background: linear-gradient(135deg, #2359AA 0%, var(--brand-blue) 100%);
   transform: translateY(-2px);
   box-shadow: var(--shadow-luxury);
 }
 
 .btn-outline-gold {
-  border: 1px solid var(--gold-500);
-  color: var(--gold-600);
+  border: 1.5px solid var(--brand-orange);
+  color: var(--brand-orange);
   background: transparent;
   font-weight: 600;
   transition: var(--transition);
 }
 .btn-outline-gold:hover {
-  background: var(--gold-500);
+  background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-dark) 100%);
+  border-color: var(--brand-orange-dark);
   color: var(--white);
+  box-shadow: var(--shadow-brand-cta);
 }
 
 /* Glassmorphism */
