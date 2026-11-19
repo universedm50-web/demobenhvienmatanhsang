@@ -219,14 +219,24 @@ body {
   transition: var(--transition);
 }
 .nav-dropdown a:hover {
-  background: var(--ivory-100);
-  color: var(--navy-900);
+  background: rgba(234, 106, 27, 0.08);
+  color: var(--brand-orange);
   padding-left: 1.15rem;
 }
 
 .nav-link-active {
-  color: var(--gold-600) !important;
-  background: rgba(200, 164, 97, 0.1);
+  color: var(--brand-orange) !important;
+  background: rgba(234, 106, 27, 0.1);
+}
+
+/* Brand Logo Hover Text Colors */
+.hover\:text-gold-600:hover,
+.group:hover .group-hover\:text-gold-600 {
+  color: var(--brand-orange) !important;
+}
+.hover\:text-gold-400:hover,
+.group:hover .group-hover\:text-gold-400 {
+  color: var(--brand-orange-light) !important;
 }
 
 .dark-input {
