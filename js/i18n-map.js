@@ -35,6 +35,7 @@ window.VI_EN_DICT = {
   "Tuyển dụng": "Careers",
   "Cửa hàng kính": "Optical Shop",
   "Liên hệ": "Contact",
+  "Hệ thống toàn quốc": "Nationwide Network",
   "Đặt lịch khám": "Book Appointment",
   "Tìm bệnh lý, dịch vụ, bác sĩ...": "Search conditions, services, doctors...",
   "Tìm kiếm bệnh lý, dịch vụ, bác sĩ": "Search conditions, services, doctors",
@@ -440,7 +441,20 @@ window.VI_EN_DICT = {
   "Không gian bệnh viện sang trọng như khách sạn 5 sao, bác sĩ Hùng cực kỳ tâm lý. Tháo kính giúp mình tự tin gấp bội trước ống kính.": "The hospital feels like a 5-star hotel and Dr. Hung was wonderfully reassuring. Being glasses-free doubled my confidence on camera.",
   "2 năm nay bé đeo Ortho-K tại viện không hề tăng thêm độ cận nào, ban ngày con chạy nhảy đá bóng thoải mái không vướng kính.": "For 2 years with Ortho-K here, my son's myopia hasn't progressed at all, and he plays soccer freely during the day without glasses.",
   "Bác Đoàn Văn Tuấn": "Mr. Doan Van Tuan",
-  "Gia đình bé Gia Bảo": "Gia Bao's Family"
+  "Gia đình bé Gia Bảo": "Gia Bao's Family",
+
+  // Nationwide Network Page
+  "Mạng lưới cơ sở & Kênh kết nối chính thức": "Hospital Network & Official Channels",
+  "Hệ Thống Bệnh Viện & Mạng Xã Hội Toàn Quốc": "Nationwide Hospital & Social Network",
+  "Kết nối trực tiếp các cơ sở nhãn khoa thuộc hệ thống trên toàn quốc cùng bản đồ chỉ đường và kênh mạng xã hội chính thức.": "Connect directly with our nationwide ophthalmology centers, interactive directions map, and official social media channels.",
+  "Cơ Sở Tiêu Biểu • Phú Thọ": "Featured Center • Phu Tho",
+  "Mắt Sài Gòn Phú Thọ (Hệ thống liên kết)": "Mat Sai Gon Phu Tho (Partner Network)",
+  "Trụ Sở Chính • Hà Nội": "Headquarters • Hanoi",
+  "Bệnh Viện Mắt Ánh Sáng Hà Nội": "Anh Sang Eye Hospital Hanoi",
+  "Xem bản đồ": "View on Map",
+  "Mở Fanpage Facebook →": "Visit Facebook Page →",
+  "Kênh Mạng Xã Hội Chính Thức": "Official Social Media Channels",
+  "Bản Đồ Chỉ Đường Trực Tiếp": "Interactive Location Map"
 };
 
 // Sort keys longest-first so full phrases always translate before sub-phrases
