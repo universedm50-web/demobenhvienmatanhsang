@@ -516,7 +516,7 @@ window.HOSPITAL_DATA = {
       name: "Nguyễn Minh Anh",
       role: "Tiếp viên trưởng Hàng không • Cận 5.5 Diop",
       method: "SMILE Pro",
-      image: "assets/images/patients/story-1.webp",
+      image: "assets/images/patients/story-1.jpg",
       quote: "Chỉ 10 giây cho mỗi mắt, không hề đau chút nào. Sáng hôm sau thức dậy mình nhìn rõ từng chi tiết ngoài ban công mà vỡ òa hạnh phúc!",
       rating: 5
     },
@@ -524,7 +524,7 @@ window.HOSPITAL_DATA = {
       name: "Bác Đoàn Văn Tuấn",
       role: "72 tuổi • Nam Định • Đục thủy tinh thể",
       method: "Phaco Đa tiêu cự",
-      image: "assets/images/patients/story-2.webp",
+      image: "assets/images/patients/story-2.jpg",
       quote: "Trước đây mắt mờ như sương mù, đi lại phải có cháu dắt. Sau 10 phút mổ Phaco tại Mắt Ánh Sáng, tôi đọc báo không cần kính lão nữa.",
       rating: 5
     },
@@ -532,7 +532,7 @@ window.HOSPITAL_DATA = {
       name: "Trần Khánh Vy",
       role: "MC / KOLs • Cận 3.75 & Loạn 1.5 Diop",
       method: "SMILE Pro",
-      image: "assets/images/patients/story-3.webp",
+      image: "assets/images/patients/story-3.jpg",
       quote: "Không gian bệnh viện sang trọng như khách sạn 5 sao, bác sĩ Hùng cực kỳ tâm lý. Tháo kính giúp mình tự tin gấp bội trước ống kính.",
       rating: 5
     },
@@ -540,7 +540,7 @@ window.HOSPITAL_DATA = {
       name: "Gia đình bé Gia Bảo",
       role: "Học sinh lớp 5 • Hà Nội",
       method: "Ortho-K Ban đêm",
-      image: "assets/images/patients/story-4.webp",
+      image: "assets/images/patients/story-4.jpg",
       quote: "2 năm nay bé đeo Ortho-K tại viện không hề tăng thêm độ cận nào, ban ngày con chạy nhảy đá bóng thoải mái không vướng kính.",
       rating: 5
     }
