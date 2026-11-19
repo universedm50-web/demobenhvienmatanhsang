@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const servicePage = document.body?.dataset?.servicePage;
   const supportPage = document.body?.dataset?.supportPage;
   const knowledgePage = document.body?.dataset?.knowledgePage;
+  const mainPage = document.body?.dataset?.page;
   if (aboutPage) {
     state.currentView = "about";
     document.querySelectorAll("[data-nav]").forEach((el) => {
@@ -62,6 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
       el.classList.toggle("nav-link-active", el.getAttribute("data-nav") === "knowledge");
     });
     switchKnowledgeTab(knowledgePage);
+    updateCartBadge();
+    initScrollHeaderAndReveal();
+  } else if (mainPage) {
+    state.currentView = mainPage;
+    document.querySelectorAll("[data-nav]").forEach((el) => {
+      el.classList.toggle("nav-link-active", el.getAttribute("data-nav") === mainPage);
+    });
+    if (mainPage === "about") switchAboutTab("timeline", true);
+    if (mainPage === "doctors") renderDoctorsPage();
+    if (mainPage === "services") renderServicesCatalog();
+    if (mainPage === "support") renderSupportTab("pricing");
+    if (mainPage === "knowledge") renderKnowledgeTab("pathology");
+    if (mainPage === "shop") renderShopPage();
     updateCartBadge();
     initScrollHeaderAndReveal();
   } else {
@@ -210,8 +224,10 @@ function navigateTo(view, subTab, skipHashUpdate = false) {
   if (!target) {
     if ((view === "about" || view === "support" || view === "knowledge") && subTab) {
       window.location.href = `${view}-${subTab}.html`;
+    } else if (view === "home") {
+      window.location.href = "index.html";
     } else {
-      window.location.href = `index.html#${view}`;
+      window.location.href = `${view}.html`;
     }
     return;
   }
