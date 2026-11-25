@@ -24,6 +24,7 @@ window.HOSPITAL_DATA = {
       nav_about: "Về chúng tôi",
       nav_doctors: "Bác sĩ",
       nav_services: "Dịch vụ",
+      nav_myopia: "Kiểm soát cận thị",
       nav_support: "Hỗ trợ",
       nav_knowledge: "Kiến thức",
       nav_shop: "Cửa hàng kính",
@@ -90,6 +91,7 @@ window.HOSPITAL_DATA = {
       nav_about: "About Us",
       nav_doctors: "Doctors",
       nav_services: "Services",
+      nav_myopia: "Myopia Control",
       nav_support: "Patient Care",
       nav_knowledge: "Knowledge",
       nav_shop: "Optical Shop",
@@ -779,5 +781,98 @@ window.HOSPITAL_DATA = {
     { group: "Phẫu thuật cận", q: "Sau mổ cận bao lâu có thể đi làm và dùng máy tính?", a: "Với SMILE Pro, đa số bệnh nhân có thể làm việc văn phòng nhẹ nhàng và nhìn màn hình sau 24–48 giờ." },
     { group: "Phaco & Người cao tuổi", q: "Mổ Phaco có cần nằm viện qua đêm không?", a: "Không cần. Bệnh nhân phẫu thuật buổi sáng có thể nghỉ ngơi 2 tiếng và ra về ngay trong ngày." },
     { group: "Thủ tục & Bảo hiểm", q: "Bệnh viện có áp dụng Bảo lãnh viện phí và Trả góp 0% không?", a: "Có. Viện hỗ trợ bảo lãnh trực tiếp với hơn 15 hãng bảo hiểm lớn và trả góp 0% lãi suất qua thẻ tín dụng của 25 ngân hàng." }
+  ],
+
+  myopiaArticles: [
+    {
+      id: "ortho-k-kiem-soat-can-thi",
+      category: "Ortho-K Ban đêm",
+      title: "Ortho-K Ban Đêm: Giải Pháp Kìm Hãm 60–80% Tốc Độ Tăng Độ Cận Cho Trẻ Học Đường",
+      reviewer: "BSCKI Trần Thu Hà",
+      date: "22/11/2026",
+      readTime: "6 phút đọc",
+      image: "assets/images/services/srv-orthok.jpg",
+      excerpt: "Tìm hiểu cơ chế định hình giác mạc khi ngủ giúp trẻ từ 6–18 tuổi nhìn rõ 10/10 suốt ban ngày không cần kính gọng và hạn chế tăng độ cận nặng.",
+      sections: [
+        { heading: "1. Vì sao cận thị học đường tăng nhanh?", body: "Ở lứa tuổi 6–16, trục nhãn cầu của trẻ vẫn đang phát triển dài ra. Nếu chỉ đeo kính gọng đơn thuần, hiện tượng viễn thị ngoại vi (peripheral hyperopic defocus) vẫn kích thích trục nhãn cầu dài thêm, khiến độ cận tăng 0.75 – 1.50 Diop mỗi năm." },
+        { heading: "2. Cơ chế kiểm soát cận thị của Ortho-K", body: "Kính áp tròng cứng thấm khí Ortho-K được thiết kế riêng theo bản đồ giác mạc của từng trẻ. Khi đeo 6–8 tiếng lúc ngủ, kính nhẹ nhàng làm phẳng vùng trung tâm giác mạc và tạo vòng hội tụ ngoại vi giúp kìm hãm tới 60–80% tốc độ dài trục nhãn cầu." },
+        { heading: "3. Trẻ nào phù hợp đeo Ortho-K?", body: "Trẻ từ 6 tuổi trở lên có độ cận từ -0.75 đến -6.00 Diop, loạn thị dưới 2.00 Diop, có ý thức hợp tác giữ vệ sinh hoặc có phụ huynh hỗ trợ vệ sinh kính mỗi tối." }
+      ]
+    },
+    {
+      id: "trong-kinh-dims-zeiss-myocare",
+      category: "Tròng kính & Atropine",
+      title: "So Sánh Tròng Kính Kiểm Soát Cận Thị (DIMS / MyoCare) Và Kính Cận Thông Thường",
+      reviewer: "GS.TS.TTND Tôn Thị Kim Thanh",
+      date: "19/11/2026",
+      readTime: "5 phút đọc",
+      image: "assets/images/shop/prod-lens-zeiss.jpg",
+      excerpt: "Tròng kính đa tiêu vi điểm ngoại vi thế hệ mới từ Đức và Pháp hoạt động ra sao trong việc làm chậm tiến triển cận thị ở trẻ chưa sẵn sàng đeo áp tròng?",
+      sections: [
+        { heading: "1. Hạn chế của tròng kính cận đơn tròng", body: "Tròng kính thông thường chỉ giúp trẻ nhìn rõ ở vùng trung tâm, không có tác dụng kiểm soát sự phát triển chiều dài trục nhãn cầu." },
+        { heading: "2. Công nghệ vi thấu kính trên tròng kiểm soát cận thị", body: "Các dòng tròng như Essilor Stellest (H.A.L.T) hay ZEISS MyoCare tích hợp hàng trăm vi thấu kính tạo tín hiệu làm chậm tăng độ mà vẫn đảm bảo thị lực trung tâm sắc nét." },
+        { heading: "3. Lời khuyên từ chuyên gia Nhãn nhi", body: "Trẻ cần đeo kính đủ thời gian tối thiểu 10–12 giờ mỗi ngày và tái khám đo chiều dài trục nhãn cầu định kỳ 3–6 tháng/lần." }
+      ]
+    },
+    {
+      id: "atropine-nong-do-thap",
+      category: "Tròng kính & Atropine",
+      title: "Nhỏ Mắt Atropine Nồng Độ Thấp (0.01% – 0.05%) Trong Phác Đồ Kiểm Soát Cận Thị",
+      reviewer: "BSCKI Trần Thu Hà",
+      date: "15/11/2026",
+      readTime: "5 phút đọc",
+      image: "assets/images/facility/consultation.webp",
+      excerpt: "Khi nào bác sĩ chỉ định dùng Atropine nồng độ thấp đơn độc hoặc phối hợp cùng kính Ortho-K để đạt hiệu quả kiểm soát cận thị tối ưu?",
+      sections: [
+        { heading: "1. Atropine nồng độ thấp là gì?", body: "Đây là thuốc nhỏ mắt được pha chế chuẩn nồng độ siêu thấp (0.01% – 0.05%), giúp giảm kích thích dài trục nhãn cầu với rất ít tác dụng phụ như chói sáng hay nhìn mờ gần." },
+        { heading: "2. Phác đồ phối hợp đa mô thức", body: "Với những trẻ tăng độ nhanh trên 1.00 Diop/năm, bác sĩ có thể phối hợp Ortho-K hoặc tròng kiểm soát cận thị cùng Atropine 0.01% nhỏ 1 giọt trước khi đi ngủ." },
+        { heading: "3. Tuyệt đối không tự ý mua dùng", body: "Phụ huynh cần đưa trẻ đi khám tại chuyên khoa Nhãn nhi để được soi đáy mắt, đo nhãn áp và theo dõi đáp ứng thuốc định kỳ." }
+      ]
+    },
+    {
+      id: "dau-hieu-tre-tang-do-can",
+      category: "Thói quen & Dinh dưỡng",
+      title: "6 Dấu Hiệu Cảnh Báo Trẻ Đang Tăng Độ Cận Nhanh Mà Phụ Huynh Dễ Bỏ Qua",
+      reviewer: "BSCKI Trần Thu Hà",
+      date: "11/11/2026",
+      readTime: "4 phút đọc",
+      image: "assets/images/facility/about-right.webp",
+      excerpt: "Nheo mắt khi xem TV, cúi sát vở khi viết hay thường xuyên dụi mắt là những tín hiệu sớm cho thấy thị lực của trẻ đang thay đổi.",
+      sections: [
+        { heading: "1. Nheo mắt hoặc nghiêng đầu khi nhìn xa", body: "Khi độ cận tăng, trẻ có xu hướng nheo mắt để thu hẹp khe mi nhằm nhìn chữ trên bảng rõ hơn." },
+        { heading: "2. Ngồi sát màn hình hoặc cúi gằm mặt", body: "Khoảng cách đọc sách dưới 30cm làm tăng điều tiết quá mức, đẩy nhanh tốc độ cận thị." },
+        { heading: "3. Nhức đầu, mỏi mắt cuối ngày học", body: "Mắt phải điều tiết bù trừ liên tục dễ gây đau đầu vùng trán, giảm tập trung khi học bài buổi tối." }
+      ]
+    },
+    {
+      id: "quy-tac-20-20-20-va-anh-sang-tu-nhien",
+      category: "Thói quen & Dinh dưỡng",
+      title: "Quy Tắc 20-20-20 & 2 Tiếng Ngoài Trời Mỗi Ngày: Lá Chắn Tự Nhiên Chống Cận Thị",
+      reviewer: "ThS.BS Lê Hoàng Nam",
+      date: "07/11/2026",
+      readTime: "4 phút đọc",
+      image: "assets/images/patients/story-4.jpg",
+      excerpt: "Nghiên cứu nhãn khoa quốc tế chứng minh trẻ hoạt động ngoài trời đủ 120 phút/ngày giảm tới 50% nguy cơ khởi phát và tiến triển cận thị.",
+      sections: [
+        { heading: "1. Ánh sáng tự nhiên kích thích Dopamine võng mạc", body: "Ánh sáng mặt trời giúp võng mạc tiết Dopamine — chất dẫn truyền thần kinh ức chế sự giãn dài bất thường của trục nhãn cầu." },
+        { heading: "2. Áp dụng quy tắc 20-20-20 khi học online", body: "Cứ sau 20 phút nhìn màn hình hoặc đọc sách, hãy cho trẻ nhìn ra xa 20 feet (khoảng 6 mét) trong ít nhất 20 giây để thư giãn cơ thể mi." },
+        { heading: "3. Bổ sung dinh dưỡng tốt cho mắt", body: "Tăng cường thực phẩm giàu Lutein, Zeaxanthin, Vitamin A và Omega-3 từ cá hồi, trứng, rau bina và cà rốt." }
+      ]
+    },
+    {
+      id: "theo-doi-chieu-dai-truc-nhan-cau",
+      category: "Ortho-K Ban đêm",
+      title: "Tại Sao Kiểm Soát Cận Thị Cần Đo Chiều Dài Trục Nhãn Cầu Bằng IOLMaster?",
+      reviewer: "TS.BS Vũ Thị Thanh",
+      date: "02/11/2026",
+      readTime: "5 phút đọc",
+      image: "assets/images/shop/prod-orthok.jpg",
+      excerpt: "Đo độ cận thông thường chỉ phản ánh bề nổi; đo chiều dài trục nhãn cầu mới là thước đo vàng đánh giá hiệu quả kiểm soát cận thị.",
+      sections: [
+        { heading: "1. Độ cận có thể dao động, nhưng trục nhãn cầu thì không", body: "Đặc biệt khi trẻ đeo Ortho-K, số độ cận trên máy đo khúc xạ sẽ giảm về 0, nên chỉ có đo sinh trắc học trục nhãn cầu mới biết mắt có đang dài ra hay không." },
+        { heading: "2. Ngăn ngừa biến chứng võng mạc về sau", body: "Trục nhãn cầu dài trên 26mm (cận nặng trên -6.00D) làm tăng nguy cơ thoái hóa hoàng điểm, rách và bong võng mạc khi trưởng thành." },
+        { heading: "3. Quy trình theo dõi chuẩn quốc tế tại BV Mắt Ánh Sáng", body: "Mỗi bé tham gia chương trình Kiểm soát cận thị đều được lập biểu đồ theo dõi trục nhãn cầu bằng máy Carl Zeiss IOLMaster 700 mỗi 3–6 tháng." }
+      ]
+    }
   ]
 };

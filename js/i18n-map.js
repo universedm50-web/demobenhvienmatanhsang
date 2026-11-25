@@ -18,6 +18,7 @@ window.VI_EN_DICT = {
   "Đội ngũ Bác sĩ": "Medical Team",
   "Dịch vụ": "Services",
   "Dịch vụ & Chuyên khoa": "Services & Specialties",
+  "Kiểm soát cận thị": "Myopia Control",
   "Phẫu thuật Khúc xạ SMILE Pro / ICL": "SMILE Pro / Phakic ICL Refractive Surgery",
   "Phẫu thuật Phaco Đục thủy tinh thể": "Phaco Cataract Surgery",
   "Kính áp tròng ban đêm Ortho-K": "Ortho-K Overnight Lenses",
@@ -442,6 +443,18 @@ window.VI_EN_DICT = {
   "2 năm nay bé đeo Ortho-K tại viện không hề tăng thêm độ cận nào, ban ngày con chạy nhảy đá bóng thoải mái không vướng kính.": "For 2 years with Ortho-K here, my son's myopia hasn't progressed at all, and he plays soccer freely during the day without glasses.",
   "Bác Đoàn Văn Tuấn": "Mr. Doan Van Tuan",
   "Gia đình bé Gia Bảo": "Gia Bao's Family",
+
+  // Myopia Control Page
+  "Chuyên trang Kiểm soát cận thị học đường & Trẻ em": "Pediatric & School Myopia Control Hub",
+  "Kiểm Soát Cận Thị Toàn Diện": "Comprehensive Myopia Control",
+  "Tổng hợp kiến thức y khoa, phác đồ Ortho-K, tròng kính kiểm soát tiến triển cận thị và hướng dẫn chăm sóc thị lực cho trẻ em & thanh thiếu niên.": "Clinical insights on Ortho-K, myopia-control lenses, low-dose Atropine, and eye-care habits for children and teens.",
+  "Tất cả bài viết": "All Articles",
+  "Tròng kính & Atropine": "Lenses & Atropine",
+  "Thói quen & Dinh dưỡng": "Habits & Nutrition",
+  "← Quay lại danh sách Kiểm soát cận thị": "← Back to Myopia Control Articles",
+  "Bài viết nổi bật": "Featured Article",
+  "Đọc chi tiết →": "Read Full Article →",
+  "Tìm kiếm bài viết kiểm soát cận thị...": "Search myopia control articles...",
 
   // Nationwide Network Page
   "Mạng lưới cơ sở & Kênh kết nối chính thức": "Hospital Network & Official Channels",

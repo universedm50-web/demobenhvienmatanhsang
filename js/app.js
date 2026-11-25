@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mainPage === "about") switchAboutTab("timeline", true);
     if (mainPage === "doctors") renderDoctorsPage();
     if (mainPage === "services") renderServicesCatalog();
+    if (mainPage === "myopia") renderMyopiaControlPage();
     if (mainPage === "support") renderSupportTab("pricing");
     if (mainPage === "knowledge") renderKnowledgeTab("pathology");
     if (mainPage === "shop") renderShopPage();
@@ -226,6 +227,8 @@ function navigateTo(view, subTab, skipHashUpdate = false) {
       window.location.href = `${view}-${subTab}.html`;
     } else if (view === "home") {
       window.location.href = "index.html";
+    } else if (view === "myopia") {
+      window.location.href = "myopia-control.html";
     } else {
       window.location.href = `${view}.html`;
     }
@@ -2225,4 +2228,190 @@ function showToast(msg) {
   t.classList.remove("hidden");
   clearTimeout(window._toastTimer);
   window._toastTimer = setTimeout(() => t.classList.add("hidden"), 3500);
+}
+
+// -------------------- VIEW: MYOPIA CONTROL (EDITORIAL HUB) --------------------
+let _myopiaCategory = "all";
+
+function setMyopiaCategory(cat) {
+  _myopiaCategory = cat;
+  document.querySelectorAll(".myopia-cat-pill").forEach((btn) => {
+    const active = btn.dataset.cat === cat;
+    btn.className = active
+      ? "myopia-cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-gold-500 text-white shadow-lg transition"
+      : "myopia-cat-pill px-4 py-2 rounded-full text-xs font-semibold bg-white/10 text-slate-200 hover:bg-white/20 transition";
+  });
+  renderMyopiaControlPage();
+}
+
+function renderMyopiaControlPage() {
+  const featuredBox = document.getElementById("myopia-featured-article");
+  const grid = document.getElementById("myopia-articles-grid");
+  if (!grid) return;
+
+  const q = (document.getElementById("myopia-search-input")?.value || "").trim().toLowerCase();
+  const all = DATA.myopiaArticles || [];
+  const filtered = all.filter((a) => {
+    const matchCat = _myopiaCategory === "all" || a.category === _myopiaCategory;
+    const matchQ = !q || a.title.toLowerCase().includes(q) || a.excerpt.toLowerCase().includes(q) || a.category.toLowerCase().includes(q);
+    return matchCat && matchQ;
+  });
+
+  if (featuredBox) {
+    if (_myopiaCategory === "all" && !q && filtered.length > 0) {
+      const f = filtered[0];
+      featuredBox.classList.remove("hidden");
+      featuredBox.innerHTML = `
+        <article onclick="openMyopiaArticle('${f.id}')" class="luxury-card card-gold-accent overflow-hidden grid grid-cols-1 lg:grid-cols-12 cursor-pointer group">
+          <div class="lg:col-span-6 h-72 lg:h-full min-h-[280px] overflow-hidden relative">
+            <img src="${f.image}" alt="${f.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
+            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-gold-500 text-white text-[11px] font-bold uppercase tracking-wider shadow">Bài viết nổi bật</span>
+          </div>
+          <div class="lg:col-span-6 p-7 sm:p-10 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 mb-3">
+                <span class="px-2.5 py-0.5 rounded-full bg-gold-200/70 text-gold-600 font-bold">${f.category}</span>
+                <span>📅 ${f.date}</span>
+                <span>⏱ ${f.readTime}</span>
+              </div>
+              <h2 class="font-display text-2xl sm:text-3xl font-semibold text-navy-900 group-hover:text-gold-600 transition leading-snug">${f.title}</h2>
+              <p class="text-sm text-slate-600 mt-3 leading-relaxed">${f.excerpt}</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-emerald-700 font-semibold">✓ Kiểm duyệt: ${f.reviewer}</span>
+              <span class="font-bold text-navy-900 group-hover:text-gold-600">Đọc chi tiết &rarr;</span>
+            </div>
+          </div>
+        </article>
+      `;
+    } else {
+      featuredBox.classList.add("hidden");
+      featuredBox.innerHTML = "";
+    }
+  }
+
+  const listItems = (_myopiaCategory === "all" && !q && filtered.length > 0) ? filtered.slice(1) : filtered;
+  if (!listItems.length && (_myopiaCategory !== "all" || q)) {
+    grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 text-sm">Không tìm thấy bài viết phù hợp. Vui lòng thử từ khóa khác.</div>`;
+  } else {
+    grid.innerHTML = listItems.map((a) => `
+      <article onclick="openMyopiaArticle('${a.id}')" class="luxury-card card-gold-accent overflow-hidden flex flex-col justify-between cursor-pointer group">
+        <div>
+          <div class="h-52 overflow-hidden relative">
+            <img src="${a.image}" alt="${a.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-navy-900/90 text-gold-400 text-[10px] font-bold uppercase tracking-wider">${a.category}</span>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 text-[11px] text-slate-500 mb-2">
+              <span>📅 ${a.date}</span>
+              <span>•</span>
+              <span>⏱ ${a.readTime}</span>
+            </div>
+            <h3 class="font-display text-xl font-semibold text-navy-900 group-hover:text-gold-600 transition leading-snug mb-2">${a.title}</h3>
+            <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed">${a.excerpt}</p>
+          </div>
+        </div>
+        <div class="px-6 py-4 bg-ivory-50 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="text-emerald-700 font-semibold">✓ ${a.reviewer}</span>
+          <span class="font-bold text-navy-900 group-hover:text-gold-600">Đọc chi tiết &rarr;</span>
+        </div>
+      </article>
+    `).join("");
+  }
+
+  syncLangIfEn(document.getElementById("myopia-list-view"));
+}
+
+function openMyopiaArticle(id) {
+  const all = DATA.myopiaArticles || [];
+  const item = all.find((x) => x.id === id);
+  if (!item) return;
+
+  const listEl = document.getElementById("myopia-list-view");
+  const detailEl = document.getElementById("myopia-detail-view");
+  const box = document.getElementById("myopia-article-content");
+  if (!detailEl || !box) return;
+
+  const others = all.filter((x) => x.id !== item.id).slice(0, 3);
+  box.innerHTML = `
+    <div class="relative bg-navy-950 text-white py-16 sm:py-20 overflow-hidden">
+      <img src="${item.image}" alt="${item.title}" class="absolute inset-0 w-full h-full object-cover opacity-25" />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/85 to-navy-950/65"></div>
+      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <button onclick="backToMyopiaList()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-gold-500 text-xs font-semibold text-white transition mb-6">
+          &larr; Quay lại danh sách Kiểm soát cận thị
+        </button>
+        <div class="flex flex-wrap items-center gap-3 text-xs mb-4">
+          <span class="px-3.5 py-1 rounded-full bg-gold-500 text-white font-bold uppercase tracking-wider">${item.category}</span>
+          <span class="text-slate-300">📅 ${item.date}</span>
+          <span class="text-slate-300">⏱ ${item.readTime}</span>
+        </div>
+        <h1 class="font-display text-3xl sm:text-5xl font-semibold leading-[1.15] max-w-4xl mb-6">${item.title}</h1>
+        <div class="inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/10 border border-gold-400/30 text-xs">
+          <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold">✓</span>
+          <span>Cố vấn chuyên môn kiểm duyệt (E-E-A-T): <strong class="text-gold-400">${item.reviewer}</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-8 space-y-8">
+          <p class="text-base sm:text-lg text-navy-900 font-medium leading-relaxed border-l-4 border-gold-500 pl-4 bg-ivory-100 py-4 pr-4 rounded-r-2xl">${item.excerpt}</p>
+          <div class="rounded-3xl overflow-hidden shadow-lg">
+            <img src="${item.image}" alt="${item.title}" class="w-full max-h-[420px] object-cover" />
+          </div>
+          <div class="space-y-6">
+            ${item.sections.map((sec) => `
+              <section class="space-y-2">
+                <h2 class="font-display text-2xl font-semibold text-navy-900">${sec.heading}</h2>
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base">${sec.body}</p>
+              </section>
+            `).join("")}
+          </div>
+        </div>
+
+        <aside class="lg:col-span-4 space-y-6">
+          <div class="luxury-card p-6 bg-navy-900 text-white space-y-4 lg:sticky lg:top-24">
+            <span class="eyebrow text-gold-400">Đặt lịch khám Nhãn nhi</span>
+            <h3 class="font-display text-2xl font-semibold">Tầm Soát &amp; Kiểm Soát Cận Thị Cho Trẻ</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Đo bản đồ giác mạc, kiểm tra chiều dài trục nhãn cầu IOLMaster 700 và tư vấn phác đồ Ortho-K / tròng kính chuyên biệt.</p>
+            <button onclick="openBookingModal('ortho-k')" class="btn-gold w-full py-3 rounded-full text-sm">Đặt lịch khám Ortho-K</button>
+            <a href="service-ortho-k.html" class="block text-center text-xs font-semibold text-gold-400 hover:underline pt-1">Xem chi tiết dịch vụ Ortho-K &rarr;</a>
+          </div>
+        </aside>
+      </div>
+
+      <div class="mt-14 pt-10 border-t border-slate-200">
+        <h3 class="font-display text-2xl font-semibold text-navy-900 mb-6">Bài Viết Liên Quan Về Kiểm Soát Cận Thị</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          ${others.map((o) => `
+            <article onclick="openMyopiaArticle('${o.id}')" class="luxury-card card-gold-accent overflow-hidden cursor-pointer group flex flex-col justify-between">
+              <div>
+                <img src="${o.image}" alt="${o.title}" class="h-40 w-full object-cover group-hover:scale-105 transition duration-500" />
+                <div class="p-4">
+                  <span class="text-[10px] font-bold uppercase text-gold-600">${o.category}</span>
+                  <h4 class="font-display text-lg font-semibold text-navy-900 group-hover:text-gold-600 mt-1 line-clamp-2">${o.title}</h4>
+                </div>
+              </div>
+              <div class="px-4 pb-4 text-xs font-bold text-navy-900 group-hover:text-gold-600">Đọc chi tiết &rarr;</div>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    </div>
+  `;
+
+  if (listEl) listEl.classList.add("hidden");
+  detailEl.classList.remove("hidden");
+  syncLangIfEn(detailEl);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function backToMyopiaList() {
+  const listEl = document.getElementById("myopia-list-view");
+  const detailEl = document.getElementById("myopia-detail-view");
+  if (detailEl) detailEl.classList.add("hidden");
+  if (listEl) listEl.classList.remove("hidden");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
